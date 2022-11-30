@@ -1,8 +1,17 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .container{
+    display: -ms-grid;
     display: grid;
     height: 100vh;
+    -ms-grid-rows: 1fr 8fr 2fr 2fr 2fr;
     grid-template-rows: 1fr 8fr 2fr 2fr 2fr;
-    grid-template-areas: 
+        grid-template-areas: 
     "header menu menu menu menu"
     "hero hero hero hero hero"
     "main main main 1 image "
@@ -12,42 +21,61 @@
     /* გათიშული ვწერ ამ დავალებას და ვერტიკალურად როგორ იცენტრება დამავიწყდა რომ შემახსენოთ */
 }
 .header{
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     background-color: darkblue;
     font-size: 40px;
     color: white;
     grid-area: header;
 }
 .menu{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
     background-color: red;
     font-size: 40px;
     color: white;
     grid-area: menu;
 }
 .hero{
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
     background-color: cornflowerblue;
     font-size: 40px;
     color: white;
     grid-area: hero;
 }
 .main{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     background-color: blue;
     font-size: 40px;
     color: white;
     grid-area: main;
 }
 .image{
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
     background-color:aqua;
     font-size: 40px;
     color: white;
     grid-area: image;
 }
 .extra{
+    -ms-grid-row: 4;
+    -ms-grid-column: 5;
     background-color: green;
     font-size: 40px;
     color: white;
     grid-area: extra;
 }
 .banner{
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
     background-color: yellow;
     font-size: 40px;
     color: white;
@@ -55,19 +83,57 @@
 }
 @media screen and (max-width: 768px ) {
     .container{
+        -ms-grid-rows: 1fr 4fr 4fr 2fr 2fr;
         grid-template-rows: 1fr 4fr 4fr 2fr 2fr;
-        grid-template-areas: 
+            grid-template-areas: 
         "header header header header header"
         "hero hero hero hero hero"
         "menu main main main main"
         "menu banner banner banner banner"
         "menu extra extra extra image"
     }
+    .header{
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 5
+    }
+    .menu{
+        -ms-grid-row: 3;
+        -ms-grid-row-span: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1
+    }
+    .hero{
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 5
+    }
+    .main{
+        -ms-grid-row: 3;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 4
+    }
+    .image{
+        -ms-grid-row: 5;
+        -ms-grid-column: 5
+    }
+    .extra{
+        -ms-grid-row: 5;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 3
+    }
+    .banner{
+        -ms-grid-row: 4;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 4
+    }
 }
 @media screen and (max-width: 480px ) {
     .container{
+        -ms-grid-rows: 1fr 1fr 3fr 3fr 2fr 2fr 2fr;
         grid-template-rows: 1fr 1fr 3fr 3fr 2fr 2fr 2fr;
-        grid-template-areas: 
+            grid-template-areas: 
         "header"
         "menu"
         "hero"
@@ -75,5 +141,41 @@
         "banner"
         "extra"
         "image"
+    }
+    .header{
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1
+    }
+    .menu{
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1
+    }
+    .hero{
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1
+    }
+    .main{
+        -ms-grid-row: 4;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1
+    }
+    .image{
+        -ms-grid-row: 7;
+        -ms-grid-column: 1
+    }
+    .extra{
+        -ms-grid-row: 6;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1
+    }
+    .banner{
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1
     }
 }
